@@ -12,3 +12,11 @@ maybe to install
 pip install lime
 pip install grad-cam
 ```
+
+
+***Notatka do zajęć 
+- Metoda wyjaśnialności – Gradio - zaprezentować które piksele były najważniejsze dla modelu
+- Optuna – na początku mocno zawęzić gardło i puścić optymalizację na noc, następnie stopniowo dopasowywać parametry
+- Raporty regularnie zbierać i wrzucać podpisane na GitHub
+- Przygotować końcową prezentację projektu
+- Korzystać z Google Colab 

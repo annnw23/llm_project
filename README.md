@@ -19,7 +19,11 @@ Notatka do zajęć
 - Optuna – na początku mocno zawęzić gardło i puścić optymalizację na noc, następnie stopniowo dopasowywać parametry
 - Raporty regularnie zbierać i wrzucać podpisane na GitHub
 - Przygotować końcową prezentację projektu
-- Korzystać z Google Colab 
+- Korzystać z Google Colab
+- adam i sgd
+- żeby on skakał po: liczba i rozpiętności kerneli, learning rate, bach size
+- co jest dokładność co jest strata modeli
+- W każdym podaniu trenowanie i testowanie i potem sprawdzenie metryki
 
 
 

@@ -20,3 +20,8 @@ Notatka do zajęć
 - Raporty regularnie zbierać i wrzucać podpisane na GitHub
 - Przygotować końcową prezentację projektu
 - Korzystać z Google Colab 
+
+
+
+
+[COLAB](https://colab.research.google.com/drive/1vk2aimVFx0hEzA33-by8t_c21GTNoFGw?usp=sharing#scrollTo=3--IcskcVOqC)

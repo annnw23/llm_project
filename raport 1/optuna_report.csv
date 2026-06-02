@@ -1,0 +1,2 @@
+number,value,datetime_start,datetime_complete,duration,params_batch_size,params_conv1_out,params_conv2_out,params_dropout,params_fc_units,params_kernel_size,params_lr,params_momentum,params_optimizer,state
+0,0.9813333333333333,2026-06-01 20:59:09.356262,2026-06-01 21:00:08.914916,0 days 00:00:59.558654,32,128,128,0.302361513049481,1024,5,0.0011400863701127321,0.7902831387424007,SGD,COMPLETE

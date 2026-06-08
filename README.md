@@ -137,3 +137,6 @@ Retraining best config on full training set …
   Test loss     : 0.0300
   Test accuracy : 0.9902  (99.02%)
 ```
+Następnie stworzono końcową wersję kodu (mnist_cnn_optuna_gradio_shap.py), w której wykorzystano biblioteki Gradio oraz SHAP. Gradio odpowiadało za przygotowanie interfejsu użytkownika umożliwiającego rysowanie oraz prezentację wyników klasyfikacji w formie graficznej. Biblioteka SHAP została wykorzystana do wizualizacji wpływu poszczególnych pikseli obrazu na decyzję modelu. Należy zwrócić uwagę, że model był trenowany na zbiorze MNIST, w którym cyfry są przedstawione jako białe znaki na czarnym tle. W związku z tym podczas rysowania cyfr w interfejsie konieczne było odwrócenie kolorów obrazu przed przekazaniem go do modelu. Odwrócenie kolorów obrazu zostało zrealizowane przy użyciu funkcji: original_image = transforms.functional.invert(original_image)
+
+W wizualizacjach SHAP jaśniejsze kolory oznaczają piksele, które zwiększają prawdopodobieństwo przypisania obrazu do danej klasy, natomiast ciemniejsze obszary wskazują piksele zmniejszające pewność modelu. Analiza map SHAP pokazała, że sieć neuronowa podejmowała decyzje głównie na podstawie charakterystycznych elementów kształtu cyfr, takich jak pionowe i poziome kreski, łuki oraz zamknięte pętle. Obrazy z wizualizacją SHAP można zobaczyć w folderze "SHAP"

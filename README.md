@@ -57,38 +57,38 @@ Wykres optimization_history przedstawia zmianę najlepszej uzyskanej dokładnoś
 Wykres parallel_coordinate został wykorzystany głównie do pokazania możliwości analitycznych biblioteki Optuna i nie będzie brany do uwagi na końcu tego etapu. Przedstawia zależności między wartościami hiperparametrów a uzyskaną skutecznością modelu. Każda linia odpowiada jednej testowanej konfiguracji parametrów. Analiza przebiegu linii pozwala określić, które kombinacje hiperparametrów prowadziły do lepszych wyników.
 ```
 Linia | Objective_Value | Batch_Size | Conv1_Out | Conv2_Out | Dropout | FC_Units | Kernel_Size | Learning_Rate | Momentum | Optimizer
-1      0.0983            16           8           32          0.3560    512        5             0.052335        0.895979    SGD
-2      0.9802            32           128         128         0.3024    1024       5             0.001140        0.790283    SGD
-3      0.9155            32           128         256         0.0839    64         5             0.000102        0.743652    SGD
+1       0.0983            16           8           32          0.3560    512        5             0.052335        0.895979    SGD
+2       0.9802            32           128         128         0.3024    1024       5             0.001140        0.790283    SGD
+3       0.9155            32           128         256         0.0839    64         5             0.000102        0.743652    SGD
 ```
 Najlepszy wynik (0.9802) uzyskano dla średniego dropout (~0.30), dużej liczby filtrów (128/128), największej warstwy FC (1024) oraz learning rate około 0.001. Najgorszy wynik (0.0983) wystąpił przy bardzo wysokim learning rate (0.052335), co sugeruje, że zbyt duży krok uczenia może znacząco pogarszać skuteczność modelu.
 
 Wykres param_importances przedstawia ważność poszczególnych hiperparametrów dla końcowej skuteczności modelu. Im wyższa wartość, tym większy wpływ dany parametr miał na uzyskiwany wynik podczas optymalizacji.
 ```
 Hiperparametr | Ważność
-lr             0.35
-conv1_out      0.33
-conv2_out      0.13
-optimizer      0.09
-kernel_size    0.04
-fc_units       0.03
-batch_size     0.02
-dropout        0.02
+lr              0.35
+conv1_out       0.33
+conv2_out       0.13
+optimizer       0.09
+kernel_size     0.04
+fc_units        0.03
+batch_size      0.02
+dropout         0.02
 ```
 Największy wpływ na skuteczność modelu miały learning rate (0.35) oraz liczba filtrów w pierwszej warstwie konwolucyjnej conv1_out (0.33). Parametry takie jak batch_size i dropout miały najmniejszy wpływ (po 0.02), dlatego ich dokładne dostrajanie w badanym zakresie nie wpływało istotnie na końcowy wynik modelu.
 
 Wykres slice_plot pokazuje wpływ poszczególnych wartości hiperparametrów na jakość modelu. Najlepsze wyniki były najczęściej uzyskiwane dla małego współczynnika uczenia (lr), optymalizatora Adam, batch_size 256 oraz architektury zawierającej conv1_out = 16, conv2_out = 64 i fc_units = 256.
 ```
-Parametr | Najlepsza jakość | Najgorsza jakość
-lr         0.00025            0.0523
-conv1_out  16                 8
-conv2_out  64                 32
-optimizer  Adam               SGD
-kernel_size 7                 5
-batch_size 256                16
-dropout    0.47               0.36
-momentum   0.79               0.90
-fc_units   256                512
+Parametr  |  Najlepsza jakość | Najgorsza jakość
+lr           0.00025            0.0523
+conv1_out    16                 8
+conv2_out    64                 32
+optimizer    Adam               SGD
+kernel_size  7                  5
+batch_size   256                16
+dropout      0.47               0.36
+momentum     0.79               0.90
+fc_units     256                512
 ```
 Liczby, które najlepiej pokazały się podczas testów:
 - lr: 0.0001 - 0.001

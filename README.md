@@ -29,3 +29,10 @@ Notatka do zajęć
 
 
 [COLAB](https://colab.research.google.com/drive/1vk2aimVFx0hEzA33-by8t_c21GTNoFGw?usp=sharing#scrollTo=3--IcskcVOqC)
+
+Nasz projekt polegał na analizie działania sieci neuronowych oraz optymalizacji ich parametrów dla zadania klasyfikacji obrazów ze zbioru MNIST. W pierwszej części wykorzystano bibliotekę Optuna do automatycznego doboru hiperparametrów konwolucyjnej sieci neuronowej CNN. Dla każdej wygenerowanej konfiguracji model był trenowany przez określoną liczbę epok, a po każdej epoce obliczana była dokładność na zbiorze walidacyjnym. Wyniki były przekazywane do Optuny, która na ich podstawie wybierała najbardziej obiecujące kombinacje parametrów do kolejnych prób. Po wyznaczeniu najlepszej konfiguracji model został ponownie wytrenowany na pełnym zbiorze treningowym i oceniony na zbiorze testowym. Dodatkowo zaimplementowano interfejs użytkownika w bibliotece Gradio, umożliwiający wgrywanie lub rysowanie cyfr i ich klasyfikację przez wytrenowany model. W celu zwiększenia interpretowalności wyników wykorzystano bibliotekę SHAP, która pozwala wizualizować wpływ poszczególnych pikseli obrazu na końcową decyzję sieci neuronowej.
+
+Po napisaniu pierwszej wersji kodu (test.py) postanowiliśmy przetestować możliwie szeroki zakres hiperparametrów. Celem było określenie, które wartości mają największy wpływ na skuteczność modelu oraz zawężenie zakresów do dalszych testów.
+
+<img width="633" height="281" alt="image" src="https://github.com/user-attachments/assets/f233d870-bc89-4b35-a0f7-aa8cbebc4de6" />
+

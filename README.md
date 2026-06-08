@@ -52,12 +52,12 @@ Wyniki danego testu zostały podane w folderze "raport 1"
 Wykres optimization_history przedstawia zmianę najlepszej uzyskanej dokładności w kolejnych trialach Optuny. Można zauważyć, że największa poprawa następuje w pierwszych 15-20 próbach, a dalsze triale nie przynoszą istotnego wzrostu jakości modelu. Oznacza to, że dla badanego problemu do znalezienia dobrej konfiguracji hiperparametrów wystarcza około 15-20 triali, co pozwala skrócić czas optymalizacji.
 
 Wykres parallel_coordinate został wykorzystany głównie do pokazania możliwości analitycznych biblioteki Optuna i nie będzie brany do uwagi na końcu tego etapu. Przedstawia zależności między wartościami hiperparametrów a uzyskaną skutecznością modelu. Każda linia odpowiada jednej testowanej konfiguracji parametrów. Analiza przebiegu linii pozwala określić, które kombinacje hiperparametrów prowadziły do lepszych wyników.
-
+'''
 Linia |	Objective_Value |	Batch_Size |	Conv1_Out |	Conv2_Out |	Dropout |	FC_Units |	Kernel_Size |	Learning_Rate |	Momentum |	Optimizer
-1	      0.0983	          16	          8	          32	        0.3560	  512	        5	            0.052335	      0.895979	  SGD
-2	      0.9802	          32	          128	        128	        0.3024	  1024	      5	            0.001140	      0.790283	  SGD
-3	      0.9155	          32	          128	        256	        0.0839	  64	        5	            0.000102	      0.743652	  SGD
-
+1	      0.0983	          16	      8	        32	        0.3560	  512	        5	            0.052335	      0.895979	  SGD
+2	      0.9802	          32	      128	        128	        0.3024	  1024	  5	            0.001140	      0.790283	  SGD
+3	      0.9155	          32	      128	        256	        0.0839	  64	        5	            0.000102	      0.743652	  SGD
+'''
 Najlepszy wynik (0.9802) uzyskano dla średniego dropout (~0.30), dużej liczby filtrów (128/128), największej warstwy FC (1024) oraz learning rate około 0.001. Najgorszy wynik (0.0983) wystąpił przy bardzo wysokim learning rate (0.052335), co sugeruje, że zbyt duży krok uczenia może znacząco pogarszać skuteczność modelu.
 
 Wykres param_importances przedstawia ważność poszczególnych hiperparametrów dla końcowej skuteczności modelu. Im wyższa wartość, tym większy wpływ dany parametr miał na uzyskiwany wynik podczas optymalizacji.

@@ -224,7 +224,6 @@ def main():
 
         original_image = image.convert("L").resize((28, 28))
 
-        # MNIST ma białe cyfry na czarnym tle, więc odwracamy kolory
         original_image = transforms.functional.invert(original_image)
 
         image_tensor = transform(original_image).unsqueeze(0).to(DEVICE)
